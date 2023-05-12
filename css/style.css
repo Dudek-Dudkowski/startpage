@@ -1,3 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body{
-    background-color: red;
+background-image: url(../img/bg.png);
+background-size: cover;
+background-position: 0 10%;
+}
+
+.links-icons-box{
+    margin-top: 250px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.link-icon{
+    width: 100px;
+    height: 100px;
+    background-color: #2f3e57;
+    margin: 50px; 
 }

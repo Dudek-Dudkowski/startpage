@@ -27,35 +27,33 @@ searchInput.addEventListener("keydown", function () {
 		inputArray = inputString.split(" ");
 		console.log(inputArray);
 		let arrayLenght = inputArray.length;
-		console.log(arrayLenght);
+        let stringToSearchArray = [];
+		// console.log(arrayLenght);
 
         inputArray.reverse();
        
-        let arrayMirror = [];
 
         while(arrayLenght>=1){
             arrayLenght--;
             // console.log(arrayLenght);
-            console.log(inputArray[arrayLenght]);
-            
-            
+            console.log(inputArray[arrayLenght]);     
+            // stringToSearch = push(inputArray[arrayLenght]);
+            stringToSearchArray.push(inputArray[arrayLenght]+`+`);
+
+//             let str = "przykładowy string";
+// str = str.slice(0, -1); // usunięcie ostatniego znaku
+// console.log(str); // "przykładowy strin"
         }
+        let stringToSearch
+
+        // joining array to one string
+        stringToSearch = stringToSearchArray.join('');
+    
+        // removing last character (+)
+        stringToSearch = stringToSearch.slice(0, -1);
+
+        console.log(stringToSearch);  
 
 	}
 });
 
-// const array1 = [1, 2, 3, 4];
-// const array2 = [];
-
-// for (let i = array1.length - 1; i >= 0; i--) {
-//   array2.push(array1[i]);
-// }
-
-// console.log(array2); // [4, 3, 2, 1]
-
-
-
-// for (let i = inputArray.length - 1; i >= 0; i--){
-//     arrayMirror.push(arrayLenght[i]);
-//     console.log(arrayMirror);
-// }

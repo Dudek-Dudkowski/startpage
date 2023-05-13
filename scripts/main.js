@@ -1,6 +1,7 @@
 const searchButton = document.querySelector(`.search-icon`);
 let searchDefault = (document.querySelector(`#search`).value = `Szukaj`);
 let searchInput = document.querySelector(`#search`);
+let googleAdresString = "https://www.google.com/search?q=";
 
 searchInput.addEventListener("focus", function () {
 	if (searchDefault === "Szukaj") {
@@ -27,33 +28,32 @@ searchInput.addEventListener("keydown", function () {
 		inputArray = inputString.split(" ");
 		console.log(inputArray);
 		let arrayLenght = inputArray.length;
-        let stringToSearchArray = [];
+		let stringToSearchArray = [];
 		// console.log(arrayLenght);
 
-        inputArray.reverse();
-       
+		// reverse the inputArray
+		inputArray.reverse();
 
-        while(arrayLenght>=1){
-            arrayLenght--;
-            // console.log(arrayLenght);
-            console.log(inputArray[arrayLenght]);     
-            // stringToSearch = push(inputArray[arrayLenght]);
-            stringToSearchArray.push(inputArray[arrayLenght]+`+`);
+		while (arrayLenght >= 1) {
+			arrayLenght--;
+			stringToSearchArray.push(inputArray[arrayLenght] + `+`);
+		}
 
-//             let str = "przykładowy string";
-// str = str.slice(0, -1); // usunięcie ostatniego znaku
-// console.log(str); // "przykładowy strin"
-        }
-        let stringToSearch
+		let stringToSearch;
 
-        // joining array to one string
-        stringToSearch = stringToSearchArray.join('');
-    
-        // removing last character (+)
-        stringToSearch = stringToSearch.slice(0, -1);
+		// joining array to one string
+		stringToSearch = stringToSearchArray.join("");
 
-        console.log(stringToSearch);  
+		// removing last character (+)
+		stringToSearch = stringToSearch.slice(0, -1);
 
+		// combining google search constant adres with serching sentence
+		googleAdresString = googleAdresString + stringToSearch;
+
+		// opening finished link in new tab
+		window.open(googleAdresString);
+
+        // reseting serch for another
+        googleAdresString = 'https://www.google.com/search?q=';
 	}
 });
-

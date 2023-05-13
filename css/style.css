@@ -26,6 +26,7 @@ body {
 .icon-wrap {
 	padding: 20px 30px;
 	width: 200px;
+	margin: 0 -10px;
 }
 
 .icon-wrap a {
@@ -41,6 +42,7 @@ body {
 	text-align: center;
 	font-size: 12px;
 	overflow: hidden;
+	text-shadow: 1px 1px 2px black;
 }
 
 .links-icons-box {
@@ -103,30 +105,3 @@ body {
 .search-box .right {
 	transform: translate(-120%, 35%);
 }
-
-/* .search-bg {
-	position: absolute;
-	width: 480px;
-	height: 36px;
-	background-color: #fff;
-	top: 10px;
-	right: 360px;
-	border-top-left-radius: 25px;
-	border-bottom-left-radius: 25px;
-	border-top-right-radius: 25px;
-	border-bottom-right-radius: 25px;
-	z-index: -5;
-} */
-
-/* .search-box::before{
-	/* content: "";
-	width: 100px;
-	height: 100px;
-	background-color: #fff;
-	position: absolute;
-	content: "";
-	display: inline-block;
-	width: 36px;
-	height: 35px;
-	top: 10px;
-} */

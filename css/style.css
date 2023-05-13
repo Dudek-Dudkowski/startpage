@@ -96,11 +96,11 @@ body {
 	transform: translate(0%, 35%);
 }
 
-.search-box .left{
+.search-box .left {
 	transform: translate(120%, 35%);
 }
 
-.search-box .right{
+.search-box .right {
 	transform: translate(-120%, 35%);
 }
 

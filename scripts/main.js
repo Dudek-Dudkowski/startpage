@@ -21,15 +21,21 @@ searchInput.addEventListener("keydown", function () {
 	let key = event.key;
 
 	if (key === "Enter") {
-		console.log(searchInput.value);
+		// console.log(searchInput.value);
+		let inputString = searchInput.value;
+		console.log(inputString);
+		inputArray = inputString.split(" ");
+		console.log(inputArray);
+		let arrayLenght = inputArray.length;
+		console.log(arrayLenght);
+
+        // do {
+        //     // kod do wykonania
+        //   } while (warunek);
+
 	}
 });
 
-// let input = document.querySelector('#myInput');
-
-// input.addEventListener('keydown', function(event) {
-//   let key = event.key;
-//   if (key === 'Enter') {
-//     // tutaj wpisz kod do przetworzenia zawartości inputa
-//   }
-// });
+// let inputString = "To jest przykładowy tekst";
+// let inputArray = inputString.split(" ");
+// console.log(inputArray); // ["To", "jest", "przykładowy", "tekst"]

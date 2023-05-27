@@ -11,17 +11,14 @@ body {
 }
 
 .wrapper {
-	/*ustawienie elementu .wrapper jako konktener flexboxa */
 	display: flex;
-	/*zdefiniowanie, że elementy potomne mają być ukłądane w rzędzie i zaczynać nowy wiersz, gdy nie mieszczą się w kontenerze.*/
 	flex-flow: row wrap;
 	text-align: center;
 }
-/* > * ustawienie właściwości dla wszystkich bezpośrednich elementów potomnych .wrapper chodzi o kropkę oraz > */
+
 .wrapper > * {
 	padding: 10px;
 	margin: 10px;
-	/*Ta właściwość jest szczególnie ważna. Dzięki temu każdy potomny element .wrapper będzie zajmował 100% szerokości kontenera, ale równocześnie będą miały taki sam elastyczny rozmiar dzięki właściwości flex 1. Innymi słowy, każdy element potomny będzie zajmował tyle miejsca ile potrzebuje do wyświetlania swojej zawartości, ale będzie miał taki sam rozmiar jak pozostałe elementy potomne*/
 	flex: 1 100%;
 }
 
@@ -42,23 +39,41 @@ body {
 	/* background-color: deepskyblue; */
 }
 
-.aside1 {
-	/* background-color: gold; */
+/* .aside1 {
+	background-color: gold;
 }
 
 .aside2 {
-	/* background-color: hotpink; */
+	background-color: hotpink;
+} */
+
+.icon {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	width: 140px;
+	height: 140px;
+	overflow: hidden;
+	text-transform: uppercase;
+	color: #ddd;
+	font-size: 8px;
+	padding: 30px;
+}
+
+.icon h3 {
+	margin-top: 10px;
+	text-shadow: 1px 1px 1px black;
 }
 
 .shortcut {
 	width: 80px;
 	height: 80px;
-	margin: 10px 10px;
 	background-color: #ffffff10;
 	backdrop-filter: blur(12px);
 	-webkit-backdrop-filter: blur(12px);
 	border: 2px solid rgba(0, 0, 0, 0);
-	font-size: 10px;
+	box-shadow: 0px 0px 2px black;
+	border-radius: 10px;
 }
 
 .shortcut:hover {
@@ -67,19 +82,20 @@ body {
 }
 
 .shortcut img {
+	margin: 40px auto;
 	width: 32px;
 	height: 32px;
-	margin: 10px 0;
+	transform: translate(0%, -50%);
 }
 
 /* Dla szerokości większej bądź równej 600px elementy z klasą .aside będą zajmowały tyle samo miejsca na ekranie  */
-@media all and (min-width: 600px) {
+@media (min-width: 576px) {
 	.aside {
 		flex: 1;
 	}
 }
 /* Ustawienie kolejności wyświetlania elementów na stronie dla szerokości większej bądź równej 800px */
-@media all and (min-width: 800px) {
+@media (min-width: 768px) {
 	.main {
 		/* element .main ma zajmować 3 pola skoro .aside zajmuje 1 i są 2 to całość można umownie podzielić na 5 części */
 		flex: 3;
@@ -99,9 +115,20 @@ body {
 	}
 }
 
-@media screen and (min-width: 1200px) {
+@media (min-width: 992px) {
 	.wrapper {
-		max-width: 1200px;
+		max-width: 900px;
+		margin: 0 auto;
+	}
+}
+
+@media (min-width: 1200px) {
+	body {
+		background-position: top;
+	}
+
+	.wrapper {
+		max-width: 1000px;
 		margin: 0 auto;
 	}
 

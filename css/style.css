@@ -2,37 +2,110 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	/* outline: 1px solid red; */
 }
 
-body{
-	background-color: #F7B9B5;
+body {
+	background-image: url(../img/bg_2.png);
+	background-position: center;
+	background-size: cover;
 }
-
-.header{
-	width: 1200px;
-	height: 120px;
-	background-color: #F3C751;
-}
-
-.main{
-
-}
-
-.icon{
-	width: 120px;
-	height: 120px;
-	background-color: #ACDBB1;
-}
-
 
 .wrapper {
+	/*ustawienie elementu .wrapper jako konktener flexboxa */
 	display: flex;
+	/*zdefiniowanie, że elementy potomne mają być ukłądane w rzędzie i zaczynać nowy wiersz, gdy nie mieszczą się w kontenerze.*/
 	flex-flow: row wrap;
 	text-align: center;
 }
+/* > * ustawienie właściwości dla wszystkich bezpośrednich elementów potomnych .wrapper chodzi o kropkę oraz > */
+.wrapper > * {
+	padding: 10px;
+	margin: 10px;
+	/*Ta właściwość jest szczególnie ważna. Dzięki temu każdy potomny element .wrapper będzie zajmował 100% szerokości kontenera, ale równocześnie będą miały taki sam elastyczny rozmiar dzięki właściwości flex 1. Innymi słowy, każdy element potomny będzie zajmował tyle miejsca ile potrzebuje do wyświetlania swojej zawartości, ale będzie miał taki sam rozmiar jak pozostałe elementy potomne*/
+	flex: 1 100%;
+}
 
-.icon-wrapper{
+.header {
+	/* background-color: tomato; */
+	height: 100px;
+}
+
+.footer {
+	/* background-color: lightgreen; */
+	height: 80px;
+}
+
+.main {
 	display: flex;
 	flex-flow: row wrap;
+	justify-content: center;
+	/* background-color: deepskyblue; */
+}
+
+.aside1 {
+	/* background-color: gold; */
+}
+
+.aside2 {
+	/* background-color: hotpink; */
+}
+
+.shortcut {
+	width: 80px;
+	height: 80px;
+	margin: 10px 10px;
+	background-color: #ffffff10;
+	backdrop-filter: blur(12px);
+	-webkit-backdrop-filter: blur(12px);
+	border: 2px solid rgba(0, 0, 0, 0);
+	font-size: 10px;
+}
+
+.shortcut:hover {
+	border: 2px solid #0086f3;
+	cursor: pointer;
+}
+
+.shortcut img {
+	width: 32px;
+	height: 32px;
+	margin: 10px 0;
+}
+
+/* Dla szerokości większej bądź równej 600px elementy z klasą .aside będą zajmowały tyle samo miejsca na ekranie  */
+@media all and (min-width: 600px) {
+	.aside {
+		flex: 1;
+	}
+}
+/* Ustawienie kolejności wyświetlania elementów na stronie dla szerokości większej bądź równej 800px */
+@media all and (min-width: 800px) {
+	.main {
+		/* element .main ma zajmować 3 pola skoro .aside zajmuje 1 i są 2 to całość można umownie podzielić na 5 części */
+		flex: 3;
+		order: 2;
+	}
+	/* Tutaj jest tylko ustawianie kolejności wyświetlania elementów */
+	.aside1 {
+		order: 1;
+	}
+
+	.aside2 {
+		order: 3;
+	}
+
+	.footer {
+		order: 4;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.wrapper {
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+
+	.header {
+		height: 200px;
+	}
 }
